@@ -1,13 +1,14 @@
 import React,{useState} from 'react';
-import { Link,Route,useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import '../App.css';
 import {Button,Form,FormGroup,Label,Input} from 'reactstrap';  
-import * as yup from "yup";
 import axios from "axios";
  
 
 function Login() {
-
+ 
+  //const history=useHistory();
+  // console.log('history=',history)
   const [loginData,setLoginData]=useState({
     email:"",
     password:""
@@ -70,15 +71,14 @@ function Login() {
        <Button className="btn-lg btn-dark btn-block"
        type="submit"
        >Log in</Button>
-        
+        <p className="pt-4">Haven't registered yet?
         <Button  
-        className="mt-3"
+        className="ml-3"
         // onClick={routeToRegister}
          >Register</Button>
+         </p>
        
-        <div className="text-center p-3">
-          {/* <a href="/register">Register</a> */}
-          <span className="p-2">|</span> 
+        <div className="text-center p-2">
           <a href="/forgot-password">Forgot Password</a>
         </div>
     </Form>
