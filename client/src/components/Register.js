@@ -131,7 +131,7 @@ function Register({setPost}) {
        <h2 className="text-center">Register!</h2>
 
        <FormGroup className="text-left">
-        <Label htmlFor="userName">Name
+        <Label htmlFor="userName">Name 
         <Input type="text"
         id="userName"
         name="userName"
