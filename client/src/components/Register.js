@@ -11,7 +11,7 @@ function Register({setPost}) {
         password:"",
         email:"",
         age:false,
-        medUse:true,
+        medUse:"",
         medCondition:"",
         effect:""
     })
@@ -118,7 +118,8 @@ function Register({setPost}) {
                  
           })
           .catch((err)=>{
-              setServerError("oops! Looks like server side error!");
+            console.log('server erro in post',err)
+            setServerError("oops! Looks like server side error!");
           })
       }
   
@@ -131,7 +132,7 @@ function Register({setPost}) {
        <h2 className="text-center">Register!</h2>
 
        <FormGroup className="text-left">
-        <Label htmlFor="userName">Name
+        <Label htmlFor="userName">Name </Label>
         <Input type="text"
         id="userName"
         name="userName"
@@ -140,11 +141,10 @@ function Register({setPost}) {
         placeholder="Enter your Name"
         />
         {errors.userName.length > 0 ? <p className="error">{errors.userName}</p> : null}
-        </Label>
         </FormGroup>
 
         <FormGroup className="text-left">
-        <Label htmlFor="email"> Email 
+        <Label htmlFor="email"> Email </Label>
         <Input type="email"
         id="email"
         name="email"
@@ -153,12 +153,11 @@ function Register({setPost}) {
         placeholder="Enter your email"
         />
         {errors.email.length > 0 ? <p className="error">{errors.email}</p> : null}
-        </Label>
         </FormGroup>
 
 
         <FormGroup className="text-left">
-        <Label htmlFor="password"> Password
+        <Label htmlFor="password"> Password</Label>
         <Input type="password"
         id="password"
         name="password"
@@ -167,7 +166,6 @@ function Register({setPost}) {
         placeholder="Password"
         />
         {errors.password.length > 0 ? <p className="error">{errors.password}</p> : null}
-        </Label>
         </FormGroup>
 
         <FormGroup className="text-left pl-4">
@@ -188,6 +186,7 @@ function Register({setPost}) {
             name="medUse"
             value={userInfo.medUse}
             onChange={handleChange}
+            className="ml-4"
             >
             <option value="">***Please Choose One!***</option>
             <option value="Medicinal">Medicinal</option>  
@@ -198,7 +197,7 @@ function Register({setPost}) {
         </FormGroup>
 
         <FormGroup className="text-left">
-        <Label htmlFor="effect"> Desired Effect
+        <Label htmlFor="effect"> Desired Effect </Label>
         <Input type="text"
         id="effect"
         name="effect"
@@ -207,20 +206,20 @@ function Register({setPost}) {
         placeholder="Stress Relief / Suppress Pain / Induce Sleep"
         />
          {errors.effect.length > 0 ? <p className="error">{errors.effect}</p> : null}
-         </Label>
         </FormGroup>
 
         <FormGroup className="text-left">
-        <Label htmlFor="medCondition">Medical Conditions if Any?
+        <Label htmlFor="medCondition">Medical Conditions if Any?</Label>
         <textarea
          id="medCondition"
          name="medCondition"
          value={userInfo.medCondition}
          onChange={handleChange}
+         className="mt-2 ml-4"
          placeholder="List down your Medical Conditions if any"
         /> 
          {errors.medCondition.length > 0 ? <p className="error">{errors.medCondition}</p> : null}
-        </Label>
+        
         </FormGroup>
       
        <Button className="btn-lg btn-dark btn-block"

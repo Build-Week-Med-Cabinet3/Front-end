@@ -26,6 +26,11 @@ code {
   width: 100%;
 }
 
+.tag{
+  text-align: left;
+  margin-left: 1rem;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -40,6 +45,7 @@ nav {
   justify-content: space-between; 
   margin-right: 3rem;
   margin-left: 65rem;
+   
 }
 
 .navLinks a{
@@ -67,7 +73,7 @@ h1{
   background-color: darkolivegreen;
   color:white;
   text-shadow: rgb(38, 48, 41) 2px 2px; 
-  padding:1.5% 2%;  
+  padding:1% 1.5%;  
  }
 
 
@@ -79,7 +85,7 @@ h1{
   font-size: 1rem;
   height:100%;
   background-color: snow;
-  opacity: 85%;
+  opacity: 90%;
   color:#12251f;
 }
 
