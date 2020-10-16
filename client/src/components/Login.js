@@ -3,9 +3,10 @@ import { useHistory } from "react-router-dom";
 import '../App.css';
 import {Button,Form,FormGroup,Label,Input} from 'reactstrap';  
 import axios from "axios";
+import axiosWithAuth from './axiosWithAuth'
  
 
-function Login() {
+function Login(props) {
  
   //const history=useHistory();
   // console.log('history=',history)
@@ -23,9 +24,14 @@ function Login() {
 
   const handleSubmit=(e)=>{
     e.preventDefault();
-    axios.post("https://reqres.in/api/users",loginData)
+    axiosWithAuth()
+    .post('/login',loginData)
     .then(res=>{
       console.log('loginData call success',res);
+      window.localStorage.setItem('token', res.data)
+      props.history.push('/protectedStrains');
+
+
     })
     .catch(err=>{
       console.log('error in loginData call',err);

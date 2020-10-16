@@ -1,8 +1,10 @@
 import React,{useState} from 'react';
-import {Link,Route,Switch} from "react-router-dom";
+import {BrowserRouter as Router, Link, Route,Switch} from "react-router-dom";
 import './App.css';
 import Login from './components/Login';
 import Register from './components/Register';
+import { PrivateRoute } from './components/PrivateRoute'
+import StrainSelection from './components/StrainSelection'
 
 function App() {
    // temporary state used to display response from API.  
@@ -10,6 +12,7 @@ function App() {
    console.log('post value in app js',post)
 
   return (
+    <Router>
     <div className="App">
       <nav>
         <h1 className="logo">Med Cab</h1>
@@ -24,13 +27,16 @@ function App() {
         <Route path="/register">
           <Register setPost={setPost}/>
         </Route>
+        
 
         <Route path="/">
         <Login />
         </Route>
+        <PrivateRoute path="/protectedStrains" component={StrainSelection}/>
       </Switch>
     
     </div>
+    </Router>
   );
 }
 
