@@ -5,6 +5,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import { PrivateRoute } from './components/PrivateRoute'
 import StrainSelection from './components/StrainSelection'
+import Strains from './components/Strains';
 
 function App() {
    // temporary state used to display response from API.  
@@ -32,7 +33,7 @@ function App() {
         <Route path="/">
         <Login />
         </Route>
-        <PrivateRoute path="/protectedStrains" component={StrainSelection}/>
+        <PrivateRoute path="/protectedStrains" component={Strains}/>
       </Switch>
     
     </div>
