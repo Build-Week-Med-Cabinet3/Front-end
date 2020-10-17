@@ -3,10 +3,11 @@ import '../App.css';
 import {Button,Form,FormGroup,Label,Input} from 'reactstrap';  
 import * as yup from "yup";
 import axios from "axios";
+import axiosWithAuth from './axiosWithAuth'
 
-function Register({setPost}) {
+function Register({setPost}, props) {
 
-    const [userInfo,setUserInfo]=useState({
+    const [userInfo, setUserInfo]=useState({
         userName:"",
         password:"",
         email:"",
@@ -106,13 +107,15 @@ function Register({setPost}) {
       }
       
       function callPost(){
-          axios
+          axiosWithAuth()
           //to be replaced with MED CAB api from backend
-          .post("https://reqres.in/api/users", userInfo)
+          .post("/register", userInfo)
           .then((res)=>{
               //update the stored post - with response from api
               console.log('Response back from reqres:',res.data)
               setPost(res.data)
+              localStorage.setItem('token', res.data)
+              props.history.push('/protectedStrains')
               //clear server error
               setServerError(null);
                  
