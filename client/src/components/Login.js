@@ -51,7 +51,7 @@ function Login(props) {
       >
        <h2 className="text-center">Welcome !</h2>
        <FormGroup className="text-left">
-        <Label htmlFor="username"> Email  </Label>
+        <Label htmlFor="username"> UserName </Label>
         <Input type="email"
         id="username"
         name="username"
