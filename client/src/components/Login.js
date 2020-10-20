@@ -34,8 +34,8 @@ function Login(props) {
     })
     .catch(err=>{
       console.log('error in loginData call',err);
-      console.log("show user:", error);
       setError("Invalid Login name or Password");
+      console.log("show user:", error);
       console.log('Login Failed for the User:',loginData.username);
     })
   }
@@ -45,6 +45,7 @@ function Login(props) {
   }
 
   return (
+      <>
       <form className="login-form"  
       onSubmit={handleSubmit}
       name="login"
@@ -88,6 +89,7 @@ function Login(props) {
           <a href="/forgot-password">Forgot Password</a>
         </div>
     </form>
+    </>
   );
 }
 
