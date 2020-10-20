@@ -8,8 +8,8 @@ import axiosWithAuth from './axiosWithAuth'
 
 function Login(props) {
  
-  //const history=useHistory();
-  // console.log('history=',history)
+  const history=useHistory();
+  console.log('history=',history)
   const [loginData,setLoginData]=useState({
     email:"",
     password:""
@@ -40,13 +40,13 @@ function Login(props) {
     })
   }
 
-  // const routeToRegister=(e)=>{
-  //    history.push('/register');
-  // }
+  const routeToRegister=(e)=>{
+     history.push('/register');
+  }
 
   return (
     <>
-      <Form className="login-form"
+      <Form className="login-form" data-netlify="true"
       onSubmit={handleSubmit}
       >
        <h2 className="text-center">Welcome !</h2>
@@ -78,9 +78,9 @@ function Login(props) {
        type="submit"
        >Log in</Button>
         <p className="pt-4">Haven't registered yet?
-        <Button  
+        <Button 
         className="ml-3"
-        // onClick={routeToRegister}
+        onClick={routeToRegister}
          >Register</Button>
          </p>
        

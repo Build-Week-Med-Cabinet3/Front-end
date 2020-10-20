@@ -95,6 +95,7 @@ h1{
   color:#12251f;
 }
  
+ 
  /* for mobile - with Media Pixel of up to 500px display column*/
 @media only screen and (max-width: 500px){
   .navLinks {
