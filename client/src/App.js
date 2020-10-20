@@ -12,7 +12,7 @@ function App() {
    const [post, setPost] = useState([]);
    console.log('post value in app js',post)
   return (
-    <Router>
+    // <Router>
     <div className="App">
       <nav>
         <h1 className="logo">Med Cab</h1>
@@ -34,11 +34,12 @@ function App() {
         <Route path="/">
         <Login />
         </Route>
+        
         <PrivateRoute path="/protectedStrains" component={Strains}/>
       </Switch>
     
     </div>
-    </Router>
+    // </Router>
   );
 }
 
