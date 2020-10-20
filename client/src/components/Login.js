@@ -7,7 +7,7 @@ import axiosWithAuth from './axiosWithAuth'
 
 function Login(props) {
  
-  const history=useHistory();
+  // const history=useHistory();
  
   const [loginData,setLoginData]=useState({
     username:"",
@@ -39,9 +39,9 @@ function Login(props) {
     })
   }
 
-  const routeToRegister=(e)=>{
-     history.push('/register');
-  }
+  // const routeToRegister=(e)=>{
+  //    history.push('/register');
+  // }
 
   return (
     <>
@@ -78,7 +78,7 @@ function Login(props) {
         <p className="pt-4">Haven't registered yet?
         <Button 
         className="ml-3"
-        onClick={routeToRegister}
+        // onClick={routeToRegister}
          >Register</Button>
          </p>
        
