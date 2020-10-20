@@ -21,8 +21,7 @@ function App() {
         <div className="navLinks">
           <Link to="/">Login</Link>
           <Link to="/register">Register</Link>
-          {/* <Link to="/strain">Strain</Link>
-          <Link to="/profile">Profile</Link> */}
+          <Link to="/strain">Strain</Link>
         </div>
       </nav>
 
