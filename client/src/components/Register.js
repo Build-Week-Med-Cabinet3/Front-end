@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import '../App.css';
-import {Button,FormGroup,Label,Input} from 'reactstrap';  
+import {Button,Form,FormGroup,Label,Input} from 'reactstrap';  
 import * as yup from "yup";
 // import axios from "axios";
 import axiosWithAuth from './axiosWithAuth'
@@ -128,7 +128,7 @@ function Register({setPost}, props) {
   
 
   return (
-    <form className="register-form"
+    <Form className="register-form"
          onSubmit={handleSubmit}
          name="register">
       {serverError && <p className="error">{serverError}</p>}
@@ -233,7 +233,7 @@ function Register({setPost}, props) {
        type="submit"
        disabled={buttonIsDisabled}
        >Register</Button>
-    </form>
+    </Form>
   );
 }
 

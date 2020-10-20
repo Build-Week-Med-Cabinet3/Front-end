@@ -33,7 +33,7 @@ function App() {
         
 
         <Route exact path="/">
-        <Login />
+         <Login />
         </Route>
 
         <PrivateRoute path="/protectedStrains" component={Strains}/>

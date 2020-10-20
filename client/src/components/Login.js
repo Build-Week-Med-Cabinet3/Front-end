@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import { useHistory } from "react-router-dom";
 import '../App.css';
-import {Button,FormGroup,Label,Input} from 'reactstrap';  
+import {Button,Form,FormGroup,Label,Input} from 'reactstrap';  
 import axiosWithAuth from './axiosWithAuth'
  
 
@@ -44,8 +44,8 @@ function Login(props) {
   // }
 
   return (
-    <>
-    <form className="login-form"  
+    <> 
+    <Form className="login-form"  
       onSubmit={handleSubmit}
       name="login"
       >
@@ -85,7 +85,7 @@ function Login(props) {
         <div className="text-center p-2">
           <a href="/forgot-password">Forgot Password</a>
         </div>
-    </form>
+    </Form>
     </>
   );
 }
