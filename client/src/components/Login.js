@@ -11,7 +11,7 @@ function Login(props) {
   const history=useHistory();
   console.log('history=',history)
   const [loginData,setLoginData]=useState({
-    email:"",
+    username:"",
     password:""
   }); 
 
@@ -46,24 +46,24 @@ function Login(props) {
 
   return (
     <>
-      <Form className="login-form" data-netlify="true"
+      <form className="login-form" data-netlify="true"
       onSubmit={handleSubmit}
       >
        <h2 className="text-center">Welcome !</h2>
        <FormGroup className="text-left">
-        <Label htmlFor="email"> Email </Label>
+        <Label htmlFor="username"> Email 
         <Input type="email"
-        id="email"
-        name="email"
-        value={loginData.email}
+        id="username"
+        name="username"
+        value={loginData.username}
         onChange={handleChange}
         placeholder="Enter your email"
         />
-        
+        </Label>
         </FormGroup>
 
         <FormGroup className="text-left">
-        <Label htmlFor="password"> Password </Label>
+        <Label htmlFor="password"> Password 
         <Input type="password"
         id="password"
         name="password"
@@ -71,7 +71,7 @@ function Login(props) {
         onChange={handleChange}
         placeholder="Password"
         />
-        
+        </Label>
         </FormGroup>
       
        <Button className="btn-lg btn-dark btn-block"
@@ -87,7 +87,7 @@ function Login(props) {
         <div className="text-center p-2">
           <a href="/forgot-password">Forgot Password</a>
         </div>
-    </Form>
+    </form>
     </>
   );
 }

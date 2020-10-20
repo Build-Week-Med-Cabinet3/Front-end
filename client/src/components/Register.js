@@ -8,13 +8,13 @@ import axiosWithAuth from './axiosWithAuth'
 function Register({setPost}, props) {
 
     const [userInfo, setUserInfo]=useState({
-        userName:"",
+        username:"",
         password:"",
         email:"",
-        age:false,
-        medUse:"",
-        medCondition:"",
-        effect:""
+        "21_or_over":false,
+        reason_for_use:"",
+        medical_condition:"",
+        desired_effect:""
     })
 
     // server error
@@ -25,13 +25,13 @@ function Register({setPost}, props) {
 
     // managing state for errors. empty unless inline validation (validateInput) updates key/value pair to have error
     const [errors, setErrors] = useState({
-        userName:"",
-        password:"",
-        email:"",
-        age:"",
-        medUse:"",
-        medCondition:"",
-        effect:""
+      username:"",
+      password:"",
+      email:"",
+      "21_or_over":"",
+      reason_for_use:"",
+      medical_condition:"",
+      desired_effect:""
     });
 
 
@@ -82,7 +82,7 @@ function Register({setPost}, props) {
 
     // Add a schema, used for all validation to determine whether the input is valid or not
   const formSchema = yup.object().shape({
-    userName: yup.string()
+    username: yup.string()
     .min(2,"Please enter name of atleast 2 characters")
     .required("oh please ! Name is required"),
     
@@ -90,14 +90,14 @@ function Register({setPost}, props) {
     
     password: yup.string()
     .required("Please enter Password"),
-    age:yup.boolean(),
+    "21_or_over":yup.boolean(),
   
-    medUse: yup.string()
+    reason_for_use: yup.string()
     .oneOf(["Medicinal","Recreational"])
     .required("Please choose one"),
     
-    medCondition: yup.string(),
-    effect:yup.string(),
+    medical_condition: yup.string(),
+    desired_effect:yup.string(),
   });
 
 
@@ -136,22 +136,21 @@ function Register({setPost}, props) {
 
        <FormGroup className="text-left">
 
-        <Label htmlFor="userName">Name </Label>
-
-       
+        <Label htmlFor="userName">Name      
 
         <Input type="text"
-        id="userName"
-        name="userName"
-        value={userInfo.userName}
+        id="username"
+        name="username"
+        value={userInfo.username}
         onChange={handleChange}
         placeholder="Enter your Name"
         />
-        {errors.userName.length > 0 ? <p className="error">{errors.userName}</p> : null}
+        {errors.username.length > 0 ? <p className="error">{errors.username}</p> : null}
+        </Label> 
         </FormGroup>
-
+        
         <FormGroup className="text-left">
-        <Label htmlFor="email"> Email </Label>
+        <Label htmlFor="email"> Email 
         <Input type="email"
         id="email"
         name="email"
@@ -160,11 +159,12 @@ function Register({setPost}, props) {
         placeholder="Enter your email"
         />
         {errors.email.length > 0 ? <p className="error">{errors.email}</p> : null}
+        </Label>
         </FormGroup>
 
 
         <FormGroup className="text-left">
-        <Label htmlFor="password"> Password</Label>
+        <Label htmlFor="password"> Password
         <Input type="password"
         id="password"
         name="password"
@@ -173,24 +173,25 @@ function Register({setPost}, props) {
         placeholder="Password"
         />
         {errors.password.length > 0 ? <p className="error">{errors.password}</p> : null}
+        </Label>
         </FormGroup>
 
         <FormGroup className="text-left pl-4">
-        <Label htmlFor="age"> 
+        <Label htmlFor="21_or_over"> 
         <Input type="checkbox"
-        id="age"
-        name="age"
-        checked={userInfo.age}
+        id="21_or_over"
+        name="21_or_over"
+        checked={userInfo["21_or_over"]}
         onChange={handleChange}/>I declare that I'm 21+ Years Old
-        {errors.age.length > 0 ? <p className="error">{errors.age}</p> : null}
+        {errors["21_or_over"].length > 0 ? <p className="error">{errors["21_or_over"]}</p> : null}
         </Label>
         </FormGroup>
 
         <FormGroup className="text-left">
-        <Label htmlFor="medUse"> Intent of Use?
+        <Label htmlFor="reason_for_use"> Intent of Use?
             <select 
-            id="medUse"
-            name="medUse"
+            id="reason_for_use"
+            name="reason_for_use"
             value={userInfo.medUse}
             onChange={handleChange}
             className="ml-4"
@@ -199,34 +200,35 @@ function Register({setPost}, props) {
             <option value="Medicinal">Medicinal</option>  
             <option value="Recreational">Recreational</option>    
             </select>
-            {errors.medUse.length > 0 ? <p className="error">{errors.medUse}</p> : null}
+            {errors.medical_condition.length > 0 ? <p className="error">{errors.medical_condition}</p> : null}
             </Label>
         </FormGroup>
 
         <FormGroup className="text-left">
-        <Label htmlFor="effect"> Desired Effect </Label>
+        <Label htmlFor="desired_effect"> Desired Effect 
         <Input type="text"
-        id="effect"
-        name="effect"
-        value={userInfo.effect}
+        id="desired_effect"
+        name="desired_effect"
+        value={userInfo.desired_effect}
         onChange={handleChange}
         placeholder="Stress Relief / Suppress Pain / Induce Sleep"
         />
-         {errors.effect.length > 0 ? <p className="error">{errors.effect}</p> : null}
+         {errors.desired_effect.length > 0 ? <p className="error">{errors.desired_effect}</p> : null}
+         </Label>
         </FormGroup>
 
         <FormGroup className="text-left">
-        <Label htmlFor="medCondition">Medical Conditions if Any?</Label>
+        <Label htmlFor="medical_condition">Medical Conditions if Any?
         <textarea
-         id="medCondition"
-         name="medCondition"
-         value={userInfo.medCondition}
+         id="medical_condition"
+         name="medical_condition"
+         value={userInfo.medical_condition}
          onChange={handleChange}
          className="mt-2 ml-4"
          placeholder="List down your Medical Conditions if any"
         /> 
-         {errors.medCondition.length > 0 ? <p className="error">{errors.medCondition}</p> : null}
-        
+         {errors.medical_condition.length > 0 ? <p className="error">{errors.medical_condition}</p> : null}
+         </Label>
         </FormGroup>
       
        <Button className="btn-lg btn-dark btn-block"
