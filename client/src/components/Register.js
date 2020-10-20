@@ -2,7 +2,7 @@ import React,{useState,useEffect} from 'react';
 import '../App.css';
 import {Button,Form,FormGroup,Label,Input} from 'reactstrap';  
 import * as yup from "yup";
-// import axios from "axios";
+import axios from "axios";
 import axiosWithAuth from './axiosWithAuth'
 
 function Register({setPost}, props) {
@@ -113,7 +113,7 @@ function Register({setPost}, props) {
           .then((res)=>{
               //update the stored post - with response from api
               console.log('Response back from reqres:',res.data)
-              setPost(res.data)
+              // setPost(res.data)
               localStorage.setItem('token', res.data)
               props.history.push('/protectedStrains')
               //clear server error
