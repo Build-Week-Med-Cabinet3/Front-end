@@ -42,26 +42,20 @@ nav {
 
 .navLinks {
   display: flex;
-  justify-content: space-between; 
-  margin-right: 3rem;
-  margin-left: 65rem;
-   
+  justify-content: flex-end;
+  margin-right: 2rem;
 }
 
 .navLinks a{
   text-decoration: none;
   color: white;
   font-weight: bold;
-  margin-right: 20px;
+  margin-right: 2rem;
   font-size: 1.3rem;
-  padding-bottom: 4%;
+  padding-bottom: 1%;
 }
 
-.navLinks a:last-of-type {
-  margin-right: 0;
-  margin-right: 5rem;
-} 
-
+ 
 .navLinks a.active {
   border-bottom: 1px solid rgb(111, 112, 39);
 }
@@ -101,3 +95,20 @@ h1{
   color:#12251f;
 }
  
+ /* for mobile - with Media Pixel of up to 500px display column*/
+@media only screen and (max-width: 500px){
+  .navLinks {
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+}
+
+/************** FOR 800 PX TAB**********************/
+@media only screen and (min-width:501px) and (max-width:810px) 
+{
+  .navLinks {
+    flex-wrap: wrap;
+    flex-direction: column;
+   
+}
+}
