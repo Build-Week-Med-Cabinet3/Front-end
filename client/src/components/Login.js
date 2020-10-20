@@ -35,7 +35,6 @@ function Login(props) {
     .catch(err=>{
       console.log('error in loginData call',err);
       setError("Invalid Login name or Password");
-      console.log("show user:", error);
       console.log('Login Failed for the User:',loginData.username);
     })
   }
@@ -45,14 +44,14 @@ function Login(props) {
   }
 
   return (
-      <>
-      <form className="login-form"  
+    <>
+    <form className="login-form"  
       onSubmit={handleSubmit}
       name="login"
       >
        <h2 className="text-center">Welcome !</h2>
        <FormGroup className="text-left">
-        <Label htmlFor="username"> Email 
+        <Label htmlFor="username"> Email  </Label>
         <Input type="email"
         id="username"
         name="username"
@@ -60,11 +59,10 @@ function Login(props) {
         onChange={handleChange}
         placeholder="Enter your email"
         />
-        </Label>
         </FormGroup>
 
         <FormGroup className="text-left">
-        <Label htmlFor="password"> Password 
+        <Label htmlFor="password"> Password </Label>
         <Input type="password"
         id="password"
         name="password"
@@ -72,7 +70,6 @@ function Login(props) {
         onChange={handleChange}
         placeholder="Password"
         />
-        </Label>
         </FormGroup>
       
        <Button className="btn-lg btn-dark btn-block"
