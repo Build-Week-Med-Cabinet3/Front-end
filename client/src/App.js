@@ -1,5 +1,5 @@
 import React,{useState} from 'react';
-import {BrowserRouter as Router, Link, Route,Switch} from "react-router-dom";
+import {Link, Route,Switch} from "react-router-dom";
 import './App.css';
 import Login from './components/Login';
 import Register from './components/Register';
@@ -20,8 +20,8 @@ function App() {
         <div className="navLinks">
           <Link to="/">Login</Link>
           <Link to="/register">Register</Link>
-          <Link to="/strain">Strain</Link>
-          <Link to="/profile">Profile</Link>
+          {/* <Link to="/strain">Strain</Link>
+          <Link to="/profile">Profile</Link> */}
         </div>
       </nav>
 
@@ -34,7 +34,7 @@ function App() {
         <Route path="/">
         <Login />
         </Route>
-        
+
         <PrivateRoute path="/protectedStrains" component={Strains}/>
       </Switch>
     

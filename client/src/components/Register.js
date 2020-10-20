@@ -1,8 +1,8 @@
 import React,{useState,useEffect} from 'react';
 import '../App.css';
-import {Button,Form,FormGroup,Label,Input} from 'reactstrap';  
+import {Button,FormGroup,Label,Input} from 'reactstrap';  
 import * as yup from "yup";
-import axios from "axios";
+// import axios from "axios";
 import axiosWithAuth from './axiosWithAuth'
 
 function Register({setPost}, props) {
@@ -128,16 +128,15 @@ function Register({setPost}, props) {
   
 
   return (
-    <>
-      <Form className="register-form"
-         onSubmit={handleSubmit}>
+    <form className="register-form"
+         onSubmit={handleSubmit}
+         name="register">
       {serverError && <p className="error">{serverError}</p>}
        <h2 className="text-center">Register!</h2>
 
        <FormGroup className="text-left">
 
         <Label htmlFor="userName">Name      
-
         <Input type="text"
         id="username"
         name="username"
@@ -161,7 +160,6 @@ function Register({setPost}, props) {
         {errors.email.length > 0 ? <p className="error">{errors.email}</p> : null}
         </Label>
         </FormGroup>
-
 
         <FormGroup className="text-left">
         <Label htmlFor="password"> Password
@@ -192,7 +190,7 @@ function Register({setPost}, props) {
             <select 
             id="reason_for_use"
             name="reason_for_use"
-            value={userInfo.medUse}
+            value={userInfo.reason_for_use}
             onChange={handleChange}
             className="ml-4"
             >
@@ -200,7 +198,7 @@ function Register({setPost}, props) {
             <option value="Medicinal">Medicinal</option>  
             <option value="Recreational">Recreational</option>    
             </select>
-            {errors.medical_condition.length > 0 ? <p className="error">{errors.medical_condition}</p> : null}
+            {errors.reason_for_use.length > 0 ? <p className="error">{errors.reason_for_use}</p> : null}
             </Label>
         </FormGroup>
 
@@ -235,9 +233,7 @@ function Register({setPost}, props) {
        type="submit"
        disabled={buttonIsDisabled}
        >Register</Button>
-                
-    </Form>
-    </>
+    </form>
   );
 }
 

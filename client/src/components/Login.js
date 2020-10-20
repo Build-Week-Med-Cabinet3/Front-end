@@ -1,15 +1,14 @@
 import React,{useState} from 'react';
 import { useHistory } from "react-router-dom";
 import '../App.css';
-import {Button,Form,FormGroup,Label,Input} from 'reactstrap';  
-import axios from "axios";
+import {Button,FormGroup,Label,Input} from 'reactstrap';  
 import axiosWithAuth from './axiosWithAuth'
  
 
 function Login(props) {
  
   const history=useHistory();
-  console.log('history=',history)
+ 
   const [loginData,setLoginData]=useState({
     username:"",
     password:""
@@ -35,7 +34,8 @@ function Login(props) {
     })
     .catch(err=>{
       console.log('error in loginData call',err);
-      setError("Invalid Login name or password");
+      setError("Invalid Login name or Password");
+      console.log("show user:", error);
       console.log('Login Failed for the User:',loginData.username);
     })
   }
@@ -45,9 +45,10 @@ function Login(props) {
   }
 
   return (
-    <>
-      <form className="login-form" data-netlify="true"
+      <>
+      <form className="login-form"  
       onSubmit={handleSubmit}
+      name="login"
       >
        <h2 className="text-center">Welcome !</h2>
        <FormGroup className="text-left">
