@@ -100,6 +100,8 @@ function Register({setPost}, props) {
     desired_effect:yup.string(),
   });
 
+  const url = 'https://medcabinet3.herokuapp.com';
+
 
     const handleSubmit=(e)=>{
         e.preventDefault();
@@ -107,9 +109,9 @@ function Register({setPost}, props) {
       }
       
       function callPost(){
-          axiosWithAuth()
+         axios
           //to be replaced with MED CAB api from backend
-          .post("/register", userInfo)
+          .post(`${url}/api/auth/register`, userInfo)
           .then((res)=>{
               //update the stored post - with response from api
               console.log('Response back from reqres:',res.data)

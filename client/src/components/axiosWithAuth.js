@@ -7,7 +7,7 @@ export default function axiosWithAuth() {
         headers: {
             authorization: token
         },
-        baseUrl: 'https://medcabinet3.herokuapp.com/'
+        baseUrl: 'https://medcabinet3.herokuapp.com'
     }
        
     )

@@ -21,10 +21,12 @@ function Login(props) {
     [e.target.name]:e.target.value});
   }
 
+  const url = 'https://medcabinet3.herokuapp.com';
+
   const handleSubmit=(e)=>{
     e.preventDefault();
-    axiosWithAuth()
-    .post('/login',loginData)
+    axios
+    .post(`${url}/api/auth/login`,loginData)
     .then(res=>{
       console.log('loginData call success',res);
       window.localStorage.setItem('token', res.data)
