@@ -11,7 +11,6 @@ function App() {
    // temporary state used to display response from API.  
    const [post, setPost] = useState([]);
    console.log('post value in app js',post)
-
   return (
     <Router>
     <div className="App">
