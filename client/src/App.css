@@ -102,9 +102,20 @@ h1{
   box-shadow: 4px 5px darkolivegreen;
   /* opacity: 90%; */ 
   color:#12251f;
-
 }
  
+.profile{
+  width:100%;
+  max-width: 650px;
+  padding:4% 10%;
+  margin:auto;
+  margin-bottom: 15rem;
+  font-size: 1.1rem;
+  height:100%;
+  background-color: RGBA(255,255,255,.8);
+  box-shadow: 4px 5px darkolivegreen;
+  color:#12251f;
+}
  
  /* for mobile - with Media Pixel of up to 500px display column*/
 @media only screen and (max-width: 500px){
