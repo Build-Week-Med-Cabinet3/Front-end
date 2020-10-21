@@ -20,6 +20,7 @@ function App() {
           <Link to="/">Login</Link>
           <Link to="/register">Register</Link>
           <Link to="/strain">Strain</Link>
+          <Link to="/profile">Profile</Link>
         </div>
       </nav>
 

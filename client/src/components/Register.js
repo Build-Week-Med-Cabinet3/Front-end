@@ -115,7 +115,7 @@ function Register({setPost}, props) {
           .then((res)=>{
               //update the stored post - with response from api
               console.log('Response back from reqres:',res.data)
-              // setPost(res.data)
+              setPost(res.data)
               localStorage.setItem('token', res.data)
               props.history.push('/protectedStrains')
               //clear server error

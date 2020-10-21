@@ -9,7 +9,7 @@ import axiosWithAuth from './axiosWithAuth'
 function Login(props) {
  
   const history=useHistory();
- 
+  
   const [loginData,setLoginData]=useState({
     username:"",
     password:""
@@ -31,8 +31,8 @@ function Login(props) {
     .then(res=>{
       console.log('loginData call success',res);
       window.localStorage.setItem('token', res.data)
-      props.history.push('/protectedStrains');
-
+      console.log('props:', props);
+      history.push('/protectedStrains');
 
     })
     .catch(err=>{
@@ -55,7 +55,7 @@ function Login(props) {
        <h2 className="text-center">Welcome !</h2>
        <FormGroup className="text-left">
         <Label htmlFor="username"> UserName </Label>
-        <Input type="email"
+        <Input type="text"
         id="username"
         name="username"
         value={loginData.username}
