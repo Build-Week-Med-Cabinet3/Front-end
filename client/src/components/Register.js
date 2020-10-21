@@ -3,10 +3,12 @@ import '../App.css';
 import {Button,Form,FormGroup,Label,Input} from 'reactstrap';  
 import * as yup from "yup";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 import axiosWithAuth from './axiosWithAuth'
 
 function Register({setPost}, props) {
-
+    console.log('register props:',props);
+    const history=useHistory();
     const [userInfo, setUserInfo]=useState({
         username:"",
         password:"",
@@ -117,7 +119,8 @@ function Register({setPost}, props) {
               console.log('Response back from reqres:',res.data)
               setPost(res.data)
               localStorage.setItem('token', res.data)
-              props.history.push('/protectedStrains')
+              // props.history.push('/protectedStrains')
+              history.push('/protectedStrains')
               //clear server error
               setServerError(null);
                  
