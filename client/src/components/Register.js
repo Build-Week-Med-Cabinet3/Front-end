@@ -11,7 +11,7 @@ function Register({setPost}, props) {
         username:"",
         password:"",
         email:"",
-        "21_or_over":false,
+        age_verified:false,
         reason_for_use:"",
         medical_condition:"",
         desired_effect:""
@@ -28,7 +28,7 @@ function Register({setPost}, props) {
       username:"",
       password:"",
       email:"",
-      "21_or_over":"",
+      age_verified:"",
       reason_for_use:"",
       medical_condition:"",
       desired_effect:""
@@ -90,7 +90,7 @@ function Register({setPost}, props) {
     
     password: yup.string()
     .required("Please enter Password"),
-    "21_or_over":yup.boolean(),
+    age_verified:yup.boolean(),
   
     reason_for_use: yup.string()
     .oneOf(["Medicinal","Recreational"])
@@ -177,13 +177,13 @@ function Register({setPost}, props) {
         </FormGroup>
 
         <FormGroup className="text-left pl-4">
-        <Label htmlFor="21_or_over"> 
+        <Label htmlFor="age_verified"> 
         <Input type="checkbox"
-        id="21_or_over"
-        name="21_or_over"
-        checked={userInfo["21_or_over"]}
+        id="age_verified"
+        name="age_verified"
+        checked={userInfo.age_verified}
         onChange={handleChange}/>I declare that I'm 21+ Years Old
-        {errors["21_or_over"].length > 0 ? <p className="error">{errors["21_or_over"]}</p> : null}
+        {errors.age_verified.length > 0 ? <p className="error">{errors.age_verified}</p> : null}
         </Label>
         </FormGroup>
 

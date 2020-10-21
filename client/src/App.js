@@ -1,6 +1,5 @@
 import React,{useState} from 'react';
 import {Link, Route,Switch} from "react-router-dom";
-import { BrowserRouter as Router } from "react-router-dom";
 import './App.css';
 import Login from './components/Login';
 import Register from './components/Register';
@@ -13,7 +12,6 @@ function App() {
    const [post, setPost] = useState([]);
    console.log('post value in app js',post)
   return (
-    <Router>
     <div className="App">
       <nav>
         <h1 className="logo">Med Cab</h1>
@@ -39,7 +37,6 @@ function App() {
       </Switch>
     
     </div>
-    </Router>
   );
 }
 
