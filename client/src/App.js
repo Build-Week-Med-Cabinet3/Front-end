@@ -15,7 +15,7 @@ function App() {
     <div className="App">
       <nav>
         <h1 className="logo">Med Cab</h1>
-          <h4 className="tag">Quality Cannabis Strains and Products</h4>
+          <h4 className="tag">Quality Cannabis Strains and Products!</h4>
         <div className="navLinks">
           <Link to="/">Login</Link>
           <Link to="/register">Register</Link>
