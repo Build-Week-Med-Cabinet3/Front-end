@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import '../App.css';
 import {Button,Form,FormGroup,Label,Input} from 'reactstrap';  
 import axios from "axios";
+import { gsap } from "gsap/dist/gsap";
  
 function Login({setLoginInfo}) {
   console.log('login props:',setLoginInfo);
@@ -24,6 +25,9 @@ function Login({setLoginInfo}) {
 
   const handleSubmit=(e)=>{
     e.preventDefault();
+    //animate login form
+    gsap.to(".login-form",{duration:1, x:10,
+      rotation: 50,borderRadius:"2%",border:"5px solid darkolivegreen",ease:"slow"});
     axios
     .post(`${url}/api/auth/login`,loginData)
     .then(res=>{
