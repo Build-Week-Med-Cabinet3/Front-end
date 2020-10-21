@@ -134,11 +134,11 @@ function Register({setPost}, props) {
          onSubmit={handleSubmit}
          name="register">
       {serverError && <p className="error">{serverError}</p>}
-       <h2 className="text-center">Register!</h2>
+       <h2 className="text-center">Please Register!</h2>
 
        <FormGroup className="text-left">
 
-        <Label htmlFor="userName">Name      
+        <Label htmlFor="userName">Name </Label>     
         <Input type="text"
         id="username"
         name="username"
@@ -147,11 +147,10 @@ function Register({setPost}, props) {
         placeholder="Enter your Name"
         />
         {errors.username.length > 0 ? <p className="error">{errors.username}</p> : null}
-        </Label> 
         </FormGroup>
         
         <FormGroup className="text-left">
-        <Label htmlFor="email"> Email 
+        <Label htmlFor="email"> Email </Label>
         <Input type="email"
         id="email"
         name="email"
@@ -160,11 +159,10 @@ function Register({setPost}, props) {
         placeholder="Enter your email"
         />
         {errors.email.length > 0 ? <p className="error">{errors.email}</p> : null}
-        </Label>
         </FormGroup>
 
         <FormGroup className="text-left">
-        <Label htmlFor="password"> Password
+        <Label htmlFor="password"> Password  </Label>
         <Input type="password"
         id="password"
         name="password"
@@ -173,7 +171,6 @@ function Register({setPost}, props) {
         placeholder="Password"
         />
         {errors.password.length > 0 ? <p className="error">{errors.password}</p> : null}
-        </Label>
         </FormGroup>
 
         <FormGroup className="text-left pl-4">
@@ -205,7 +202,7 @@ function Register({setPost}, props) {
         </FormGroup>
 
         <FormGroup className="text-left">
-        <Label htmlFor="desired_effect"> Desired Effect 
+        <Label htmlFor="desired_effect"> Desired Effect </Label>
         <Input type="text"
         id="desired_effect"
         name="desired_effect"
@@ -214,7 +211,7 @@ function Register({setPost}, props) {
         placeholder="Stress Relief / Suppress Pain / Induce Sleep"
         />
          {errors.desired_effect.length > 0 ? <p className="error">{errors.desired_effect}</p> : null}
-         </Label>
+         
         </FormGroup>
 
         <FormGroup className="text-left">
