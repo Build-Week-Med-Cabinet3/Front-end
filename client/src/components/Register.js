@@ -4,8 +4,7 @@ import {Button,Form,FormGroup,Label,Input} from 'reactstrap';
 import * as yup from "yup";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import axiosWithAuth from './axiosWithAuth'
-
+ 
 function Register({setPost}, props) {
     console.log('register props:',props);
     const history=useHistory();

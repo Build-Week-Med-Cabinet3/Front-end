@@ -3,11 +3,9 @@ import { useHistory } from "react-router-dom";
 import '../App.css';
 import {Button,Form,FormGroup,Label,Input} from 'reactstrap';  
 import axios from "axios";
-import axiosWithAuth from './axiosWithAuth'
  
-
-function Login(props) {
- 
+function Login({setLoginInfo}) {
+  console.log('login props:',setLoginInfo);
   const history=useHistory();
   
   const [loginData,setLoginData]=useState({
@@ -30,8 +28,9 @@ function Login(props) {
     .post(`${url}/api/auth/login`,loginData)
     .then(res=>{
       console.log('loginData call success',res);
+      setLoginInfo(res.data.message);
       window.localStorage.setItem('token', res.data)
-      console.log('props:', props);
+      //console.log('props:', props);
       history.push('/protectedStrains');
 
     })
