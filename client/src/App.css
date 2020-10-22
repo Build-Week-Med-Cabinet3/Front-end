@@ -27,7 +27,19 @@ code {
 }
 
 .logo{
-  font-size: 1.8rem;
+  margin: 1.5%;
+  text-align: left;
+  font-size: 2.3rem;
+  background-color: darkolivegreen;
+  color:white;
+  text-shadow: rgb(38, 48, 41) 2px 3.5px; 
+  padding:1% 1.5%;
+}
+
+.logo:hover{
+  text-decoration: none;
+  color:black;
+  text-shadow: snow 2px 3.5px; 
 }
 
 .tag{
@@ -63,10 +75,13 @@ nav {
 
  
 .navLinks a.active {
-  border-bottom: 1px solid rgb(111, 112, 39);
+  border-bottom: 1px solid rgb(44, 44, 17);
 }
 
-h1{
+.navLinks a:hover {
+  border-bottom: 1px solid white;
+}
+/* h1{
   margin: 1.5%;
   text-align: left;
   font-size: 1.4rem;
@@ -74,7 +89,7 @@ h1{
   color:white;
   text-shadow: rgb(38, 48, 41) 2px 2px; 
   padding:1% 1.5%;  
- }
+ } */
 
 
 .login-form{
@@ -116,9 +131,18 @@ h1{
   box-shadow: 4px 5px darkolivegreen;
   color:#12251f;
 }
+
+.error {
+  font-size: 1.2rem;
+  color: red;
+}
  
  /* for mobile - with Media Pixel of up to 500px display column*/
 @media only screen and (max-width: 500px){
+
+  .logo{
+    font-size: 1.2rem;
+  }
   .navLinks {
     flex-wrap: wrap;
     flex-direction: column;
@@ -128,6 +152,9 @@ h1{
 /************** FOR 800 PX TAB**********************/
 @media only screen and (min-width:501px) and (max-width:810px) 
 {
+  .logo{
+    font-size: 1.2rem;
+  }
   .navLinks {
     flex-wrap: wrap;
     flex-direction: column;

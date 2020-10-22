@@ -18,7 +18,9 @@ function App() {
   return (
     <div className="App">
       <nav>
-        <h1 className="logo">Med Cab</h1>
+        <a href="https://med-cabinet-marketing.netlify.app/"
+        className="logo">Med Cab
+        </a>
           <h4 className="tag">Quality Cannabis Strains and Products!</h4>
         <div className="navLinks">
           <Link to="/">Login</Link>

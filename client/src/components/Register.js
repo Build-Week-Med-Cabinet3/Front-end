@@ -106,7 +106,8 @@ function Register({setPost}, props) {
 
     const handleSubmit=(e)=>{
         e.preventDefault();
-        callPost();        
+        callPost();  
+              
       }
       
       function callPost(){
