@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import  axiosWithAuth  from './axiosWithAuth'
 
 
 const flavors = [
@@ -74,10 +75,17 @@ const effects = [
     { id: 16, name: "None"},
 ]
 
+const theSpecies = [
+    { id: 1, name: 'Sativa'},
+    { id: 2, name: 'Indica'},
+    { id: 3, name: 'Hybird'}
+]
+
 
 function StrainSelection() {
-
+    const [ strain, setStrain] = useState([])
     const [flavorsEffects, setFlavorsEffects] = useState({
+        species: '',
         flavor: '',
         effect: '',
        
@@ -99,7 +107,14 @@ function StrainSelection() {
         )
     })
 
-    const { flavor, effect } = flavorsEffects
+    let speciesList = theSpecies.length > 0 
+    && theSpecies.map((item,i)=> {
+        return(
+        <option key={i} value={item.name}>{item.name}</option>
+        )
+    })
+
+    const { species, flavor, effect } = flavorsEffects
 
     const onChangeFlavorsEffects = e => {
         setFlavorsEffects({
@@ -110,21 +125,36 @@ function StrainSelection() {
 
     const onSubmitFlavorsEffects = (e) => {
         e.preventDefault();
+        axiosWithAuth()
+            .get(`/api/recommendations/${effect}/${flavor}`)
+            .then(res => {
+                console.log(res.data)
+                setStrain(res.data)
+            })
     }
     return (
         <div>
 
 <form onSubmit={onSubmitFlavorsEffects} >
+        <label>
+               <h2 className="text-primary">Pick a Species</h2>
+               <select onChange={onChangeFlavorsEffects} name='species' value={species}>
+                    {speciesList}
+               </select>
+            
+            </label>
+            <br/>
             <label>
                <h2 className="text-primary">Pick 1 Flavor</h2>
-               <select onChange={onChangeFlavorsEffects} name='flavor'value={flavor}>
+               <select onChange={onChangeFlavorsEffects} name='flavor' value={flavor}>
                     {flavorList}
                </select>
             
             </label>
+            <br/>
                <label>
-              <h2>Pick 1 Effect</h2>
-              <select  onChange={onChangeFlavorsEffects} name="effect"value={effect}>
+              <h2 className="text-primary">Pick 1 Effect</h2>
+              <select  onChange={onChangeFlavorsEffects} name="effect" value={effect}>
                    {effectList}
               </select>
          
@@ -136,6 +166,19 @@ function StrainSelection() {
            </form>
             
         </div>
+
+// {strains.map(array => array.map(data => {
+//     return(
+//        <div className="card bg-dark">
+//            <h3 className="text-primary text-left">{data.id}</h3><i className="fas fa-cannabis text-primary"></i>
+//    <h4 className="text-primary">StrainType:{' '}{data.straintype}</h4>
+//    <h4 className="text-primary">Flavors:{' '}{data.flavor}</h4>
+//    <h4 className="text-primary">Effects:{' '}{data.effect}</h4>
+//    <h4 className="text-primary">Rating:{' '}{data.rating}</h4>
+//            <p>{data.description}</p>
+//            <button onClick={deleteStrain}>DELETE STRAIN</button>
+//        </div> )
+// }))}
     )
 }
 
