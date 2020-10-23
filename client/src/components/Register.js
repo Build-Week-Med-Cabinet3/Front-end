@@ -198,7 +198,7 @@ function Register({setPost}, props) {
             name="reason_for_use"
             value={userInfo.reason_for_use}
             onChange={handleChange}
-            className="ml-4"
+            className="mt-2"
             >
             <option value="">***Please Choose One!***</option>
             <option value="Medicinal">Medicinal</option>  
@@ -228,7 +228,7 @@ function Register({setPost}, props) {
          name="medical_condition"
          value={userInfo.medical_condition}
          onChange={handleChange}
-         className="mt-2 ml-4"
+         className="mt-2 pr-4"
          placeholder="List down your Medical Conditions if any"
         /> 
          {errors.medical_condition.length > 0 ? <p className="error">{errors.medical_condition}</p> : null}

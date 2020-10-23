@@ -138,6 +138,17 @@ h7{
   color:#12251f;
 }
 
+.strainselect{
+  width:100%;
+  max-width: 750px;
+  padding:4% 10%;
+  margin:auto;
+  margin-bottom: 15rem;
+  height:100%;
+  background-color: RGBA(255,255,255,.8);
+  box-shadow: 4px 5px darkolivegreen;
+}
+
 
 /* Forms */
 input {
