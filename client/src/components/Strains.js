@@ -15,7 +15,7 @@ useEffect(()=> {
     .catch(err => console.log(err))
 }, [])
     return (
-        <div>
+        <div className="strainselect">
           <StrainSelection/>  
         </div>
     )
