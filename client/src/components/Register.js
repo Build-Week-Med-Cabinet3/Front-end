@@ -176,13 +176,17 @@ function Register({setPost}, props) {
         {errors.password.length > 0 ? <p className="error">{errors.password}</p> : null}
         </FormGroup>
 
-        <FormGroup className="text-left pl-4">
-        <Label htmlFor="age_verified"> 
+        <FormGroup className="text-left">
+        <Label htmlFor="age_verified"
+        > I declare that I'm 21+ Years Old
         <Input type="checkbox"
         id="age_verified"
         name="age_verified"
         checked={userInfo.age_verified}
-        onChange={handleChange}/>I declare that I'm 21+ Years Old
+        onChange={handleChange}
+        className="ml-2 pl-4"
+        />
+    
         {errors.age_verified.length > 0 ? <p className="error">{errors.age_verified}</p> : null}
         </Label>
         </FormGroup>

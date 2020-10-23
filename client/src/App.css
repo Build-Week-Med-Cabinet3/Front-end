@@ -81,6 +81,12 @@ nav {
 .navLinks a:hover {
   border-bottom: 1px solid white;
 }
+
+h7{
+  font-size: 1.6rem;
+  font-weight: bold;
+  color:darkolivegreen;
+}
 /* h1{
   margin: 1.5%;
   text-align: left;
@@ -121,7 +127,7 @@ nav {
  
 .profile{
   width:100%;
-  max-width: 650px;
+  max-width: 950px;
   padding:4% 10%;
   margin:auto;
   margin-bottom: 15rem;
