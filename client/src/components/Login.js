@@ -12,7 +12,7 @@ function Login({setLoginInfo}) {
   const history=useHistory();
 
   useEffect(()=>{
-    gsap.from(".login-form",{opacity:0.5,scale:1,duration: 1,x:25,ease:"slow" })
+    gsap.from(".login-form",{scale:1,duration: 1,x:25,ease:"slow" })
   });
   
   const [loginData,setLoginData]=useState({
