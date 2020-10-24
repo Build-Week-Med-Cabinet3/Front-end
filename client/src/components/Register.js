@@ -11,7 +11,7 @@ function Register({setPost}, props) {
     const history=useHistory();
     //animation on register form whenever rendered
     useEffect(()=>{
-      gsap.from(".register-form",{scale:0.9,duration: 1,ease:"slow"})
+      gsap.from(".register-form",{x:10,duration: 1,ease:"slow"})
     });
 
     const [userInfo, setUserInfo]=useState({
