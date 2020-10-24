@@ -1,13 +1,19 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import { useHistory } from "react-router-dom";
 import '../App.css';
 import {Button,Form,FormGroup,Label,Input} from 'reactstrap';  
 import axios from "axios";
+import { gsap } from "gsap";
 // import { gsap } from "gsap/dist/gsap";
- 
+
+
 function Login({setLoginInfo}) {
   console.log('login props:',setLoginInfo);
   const history=useHistory();
+
+  useEffect(()=>{
+    gsap.from(".login-form",{scale:1,duration: 1,x:25,ease:"slow" })
+  });
   
   const [loginData,setLoginData]=useState({
     username:"",

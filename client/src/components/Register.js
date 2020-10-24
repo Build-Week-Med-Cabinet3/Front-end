@@ -4,10 +4,16 @@ import {Button,Form,FormGroup,Label,Input} from 'reactstrap';
 import * as yup from "yup";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
- 
+import { gsap } from "gsap";
+
 function Register({setPost}, props) {
     console.log('register props:',props);
     const history=useHistory();
+    //animation on register form whenever rendered
+    useEffect(()=>{
+      gsap.from(".register-form",{x:10,duration: 1,ease:"slow"})
+    });
+
     const [userInfo, setUserInfo]=useState({
         username:"",
         password:"",
