@@ -1,11 +1,16 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import '../App.css';
 import info from '../data';
 import {Card,CardImg,CardBody,CardTitle,CardSubtitle,CardText} from 'reactstrap'; 
- 
+import { gsap } from "gsap";
+
 function Profile({loginInfo}) {
   const [infos]=useState(info);
- 
+  
+  useEffect(()=>{
+    gsap.from(".profile",{opacity:0,scale:1,duration: 1,x:20,ease:"slow" })
+  });
+
   console.log(infos.name);  
   return (
     <div className="profile"> 
