@@ -97,7 +97,9 @@ function Register({setPost}, props) {
     
     password: yup.string()
     .required("Please enter Password"),
-    age_verified:yup.boolean(),
+    age_verified:yup.boolean()
+    .oneOf([true],"Only Person of age above 21 can Register in this site")
+    .required("Please ensure your Age to Register"),
   
     reason_for_use: yup.string()
     .oneOf(["Medicinal","Recreational"])
