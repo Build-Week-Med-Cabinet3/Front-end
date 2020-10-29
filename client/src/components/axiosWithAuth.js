@@ -1,13 +1,17 @@
 import React from 'react'
 import axios from  'axios'
 
-export default function axiosWithAuth() {
+export default  function axiosWithAuth() {
     const token = localStorage.getItem('token')
     return axios.create ({
+        
         headers: {
-            authorization: token
+            authorization: token,
+            'Content-Type': 'application/json'
         },
-        baseUrl: 'https://medcabinet3.herokuapp.com'
+
+        baseUrl: 'https://med-cab-bw.herokuapp.com'
+        
     }
        
     )

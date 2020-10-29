@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import  axiosWithAuth  from './axiosWithAuth'
+import axios from 'react'
 
 
 const flavors = [
@@ -125,24 +126,24 @@ function StrainSelection() {
 
     const onSubmitFlavorsEffects = (e) => {
         e.preventDefault();
-        axiosWithAuth()
-            .get(`/api/recommendations/${effect}/${flavor}`)
-            .then(res => {
-                console.log(res.data)
-                setStrain(res.data)
-            })
+        // axiosWithAuth()
+        // .get(`/api/recommendations/${effect}/${flavor}`)
+        //     .then(res => {
+        //         console.log(res.data)
+        //         setStrain(res.data)
+        //     })
     }
     return (
         <div>
 
 <form onSubmit={onSubmitFlavorsEffects} >
-        <label>
+        {/* <label>
                <h2 className="text-primary">Pick a Species</h2>
                <select onChange={onChangeFlavorsEffects} name='species' value={species}>
                     {speciesList}
                </select>
             
-            </label>
+            </label> */}
             <br/>
             <label>
                <h2 className="text-primary">Pick 1 Flavor</h2>
@@ -166,8 +167,8 @@ function StrainSelection() {
            </form>
             
         </div>
-
-// {strains.map(array => array.map(data => {
+    
+//  {strain.map(array => array.map(data => {
 //     return(
 //        <div className="card bg-dark">
 //            <h3 className="text-primary text-left">{data.id}</h3><i className="fas fa-cannabis text-primary"></i>
@@ -179,6 +180,7 @@ function StrainSelection() {
 //            <button onClick={deleteStrain}>DELETE STRAIN</button>
 //        </div> )
 // }))}
+
     )
 }
 

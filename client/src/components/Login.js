@@ -1,48 +1,51 @@
-import React,{useState} from 'react';
+import React,{useState, useContext} from 'react';
 import { useHistory } from "react-router-dom";
 import '../App.css';
 import {Button,Form,FormGroup,Label,Input} from 'reactstrap';  
 import axios from "axios";
+import  UserContext from '../components/context/userContext/userContext'
 // import { gsap } from "gsap/dist/gsap";
  
 function Login({setLoginInfo}) {
   console.log('login props:',setLoginInfo);
+  const userContext = useContext(UserContext)
   const history=useHistory();
   
-  const [loginData,setLoginData]=useState({
+  const [credentials,setCredentials]=useState({
     username:"",
     password:""
   }); 
 
+  const { loginUser } = userContext
+
+  const { username, password } = credentials
+
   const[error,setError] =useState("");
 
   const handleChange=(e)=>{
-    setLoginData({...loginData,
+    setCredentials({...credentials,
     [e.target.name]:e.target.value});
   }
 
-  const url = 'https://medcabinet3.herokuapp.com';
+  const url = 'https://med-cab-bw.herokuapp.com';
 
   const handleSubmit=(e)=>{
     e.preventDefault();
+    loginUser(credentials)
     //animate login form
     // gsap.to(".login-form",{duration:1, x:10,
     //   rotation: 50,borderRadius:"2%",border:"5px solid darkolivegreen",ease:"slow"});
-    axios
-    .post(`${url}/api/auth/login`,loginData)
-    .then(res=>{
-      console.log('loginData call success',res);
-      setLoginInfo(res.data.message);
-      window.localStorage.setItem('token', res.data)
-      //console.log('props:', props);
-      history.push('/protectedStrains');
+    // axios
+    // .post(`${url}/api/auth/login`,credentials)
+    // .then(res=>{
+    //   console.log('loginData call success',res);
+    //   // setLoginInfo(res.data);
+    //   window.localStorage.setItem('token', res.data.token)
+    //   //console.log('props:', props);
+    //   history.push('/protectedUsers');
 
-    })
-    .catch(err=>{
-      console.log('error in loginData call',err);
-      setError("Invalid Login name or Password");
-      console.log('Login Failed for the User:',loginData.username);
-    })
+    // })
+   
   }
 
   const routeToRegister=(e)=>{
@@ -61,7 +64,7 @@ function Login({setLoginInfo}) {
         <Input type="text"
         id="username"
         name="username"
-        value={loginData.username}
+        value={username}
         onChange={handleChange}
         placeholder="Enter your email"
         />
@@ -72,7 +75,7 @@ function Login({setLoginInfo}) {
         <Input type="password"
         id="password"
         name="password"
-        value={loginData.password}
+        value={password}
         onChange={handleChange}
         placeholder="Password"
         />

@@ -1,4 +1,7 @@
-export const GET_STRAIN = 'GET_STRAIN';
-export const ADD_STRAIN = 'ADD_STRAIN'
-export const DELETE_STRAIN = 'DELETE_STRAIN';
-export const EDIT_RECOMMENDED_STRAIN = ''
+export const GET_USERS = 'GET_USERS';
+export const ADD_USER = 'ADD_USER'
+export const DELETE_USER = 'DELETE_USER';
+export const UPDATE_USER = 'UPDATE_USER';
+export const SET_CURRENT = 'SET_CURRENT';
+export const CLEAR_CURRENT = 'CLEAR_CURRENT'
+export const LOGIN_USER = 'LOGIN_USER';
